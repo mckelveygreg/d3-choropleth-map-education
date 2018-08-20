@@ -9,12 +9,26 @@ const buildGraph = data => {
     const education = data[1];
 
     const margin = {top: 75, right: 20, bottom: 75, left: 20}
-    const width = root.clientWidth - margin.right - margin.left;
-    const height = root.clientHeight - margin.top - margin.bottom;
+    const width = 1000 - margin.right - margin.left;
+    const height = 700 - margin.top - margin.bottom;
     const svg = d3.select(root)
                     .append('svg')
-                    .attr('width', width)
-                    .attr('height', height);
+                    .attr('width', width + margin.right + margin.left)
+                    .attr('height', height + margin.top + margin.bottom);
                     
+    // topo test
+    const projection = d3.geoEquirectangular()
+                        .scale(25)
+                        .translate([width/2, height/2])
+                        .rotate([-180,0]);
+
+    const path = d3.geoPath();
+                    //.projection(projection);
+    svg.append('g').selectAll('path')
+        .data(topojson.feature(us, us.objects.counties).features)
+        .enter()
+        .append('path')
+        .attr('class', 'land')
+        .attr('d', path);
 }
 
