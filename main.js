@@ -16,9 +16,8 @@ const buildGraph = data => {
                     .attr('width', width + margin.right + margin.left)
                     .attr('height', height + margin.top + margin.bottom);
                     
-    // topo test
+    // Counties
     const path = d3.geoPath();
-                    //.projection(projection);
     svg.append('g').selectAll('path')
         .data(topojson.feature(us, us.objects.counties).features)
         .enter()
