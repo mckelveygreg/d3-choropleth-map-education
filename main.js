@@ -17,11 +17,6 @@ const buildGraph = data => {
                     .attr('height', height + margin.top + margin.bottom);
                     
     // topo test
-    const projection = d3.geoEquirectangular()
-                        .scale(25)
-                        .translate([width/2, height/2])
-                        .rotate([-180,0]);
-
     const path = d3.geoPath();
                     //.projection(projection);
     svg.append('g').selectAll('path')
