@@ -18,13 +18,13 @@ html, body {
 #root {
     box-sizing: border-box;
     margin: 20px auto 0 auto;
-    height: 90vh;
     min-width: 95vw;
     text-align: center;
     background: linear-gradient(to bottom right, rgba(0, 140, 255, 0.79), #11111150);
     box-shadow: 5px 5px 15px black;
     border-radius: 3px;
     margin-bottom: 20px;
+    padding: 20px;
 }
 
 #tooltip {

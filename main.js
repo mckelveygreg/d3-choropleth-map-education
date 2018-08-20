@@ -11,13 +11,16 @@ const buildGraph = data => {
     const margin = {top: 75, right: 20, bottom: 75, left: 20}
     const width = 1000 - margin.right - margin.left;
     const height = 700 - margin.top - margin.bottom;
-    const svg = d3.select(root)
+    const svg = d3.select('#map')
                     .append('svg')
                     .attr('width', width + margin.right + margin.left)
                     .attr('height', height + margin.top + margin.bottom);
-                    
-    // Counties
     const path = d3.geoPath();
+    
+    // Title
+
+
+    // Counties
     svg.append('g').selectAll('path')
         .data(topojson.feature(us, us.objects.counties).features)
         .enter()
