@@ -34,3 +34,6 @@ html, body {
     transition: .1s ease;
 
 }
+a {
+    color: #08326E;
+}
